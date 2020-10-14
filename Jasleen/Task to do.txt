@@ -1,0 +1,13 @@
+Always run "git pull origin master" before starting your work
+
+-> git pull origin master
+
+and Before closing
+
+-> git add .
+-> git commit -m "message(about hte changes)"
+-> git push origin master
+
+
+
+roz har baar krna hai ye
