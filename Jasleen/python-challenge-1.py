@@ -9,6 +9,9 @@ name = "Julie"
 
 age = "42"
 
-sentence = f'Hi my name is {name} and I am {age} years old'
+sentence = f'Hi my name is {name} and I am {age} years old'                         #f string
+
+sentence2 = "Hi my name is {} and I am {} years old".format(name, age)               #format function
 
 print(sentence)
+print(sentence2)
