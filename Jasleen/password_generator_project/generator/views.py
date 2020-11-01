@@ -15,6 +15,9 @@ def home(request):
 #     #return HttpResponse('Eggs are very tasty!!!')
 #     return HttpResponse('<h1>Eggs are very tasty!!</h1>')       # we can also write html
 
+def about(request):
+    return render(request, 'generator/about.html') 
+
 def password(request):
     characters = list('abcdefghijklmnopqrstuvwxyz')
    
