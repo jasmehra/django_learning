@@ -5,7 +5,7 @@ import random
 
 def home(request):
     # return HttpResponse('Hello there!')
-    return render(request, 'generator/home.html', {'title':'This is Home page'})
+    return render(request, 'generator/home.html', {'title':'Password Generator'})
 
 
 def password(request):
