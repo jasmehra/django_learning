@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site | Blog</title>
+</head>
+<body>
+    <h1>This is Blog Home Page</h1>
+    {% for blog in blogs %}
+    <h2>{{ blog.title }}</h2>
+    <h5> {{ blog.date }}</h5>
+    <p>{{ blog.description }}</p>
+    {% endfor%}
+    
+</body>
+</html>
