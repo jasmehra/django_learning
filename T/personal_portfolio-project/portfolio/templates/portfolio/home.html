@@ -7,6 +7,8 @@
 </head>
 
 <body>
+    <a href="{% url 'blog:all_blogs' %}">Blog</a><br>
+    <a href="">Resume</a> <br>
     {% load static %}
     <img src="{% static 'portfolio/mypic.jpg' %}" alt="Tasawwur Ahmad" height="400" width="600">
     {% for project in projects %}
