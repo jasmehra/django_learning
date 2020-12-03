@@ -1,14 +1,6 @@
-<html lang="en">
+{% extends 'portfolio/layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site | Django</title>
-</head>
-
-<body>
-    <a href="{% url 'blog:all_blogs' %}">Blog</a><br>
-    <a href="">Resume</a> <br>
+{% block content %}
     {% load static %}
     <img src="{% static 'portfolio/mypic.jpg' %}" alt="Tasawwur Ahmad" height="400" width="600">
     {% for project in projects %}
@@ -19,6 +11,4 @@
         <a href="{{project.url}}">Link</a>
     {% endif%}
     {% endfor %}
-</body>
-
-</html>
+{% endblock %}
