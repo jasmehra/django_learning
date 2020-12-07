@@ -43,3 +43,24 @@ Deploying:
 38) copy path i.e tasawwuramd.pythonanywhere.com - go to code directory and edit settings.py
 39) add ALLOWED_HOSTS = ['asawwuramd.pythonanywhere.com'] - reload web
 static files are missing
+
+
+For Static media files v55
+1) In Settings.py change debug to False
+2) Add static root path as media root path is added 
+    - STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+3) in bash go to project directory and run 
+    - python3 manage.py collectstatic
+        -it moves all static file to one central location
+        inside project directory static folder will be created
+4) in pythonanywhere - web add static files url 
+    - /static/ - directory (directory of static) using pwd
+5) doing this will remove media files 
+    in static files url add media path 
+    - url as /media/ - directory as path of media using pwd
+
+
+6) we can force https from pythonanywhere web 
+7) if want to use mysql go to databases option on top right 
+we can intialize it
+8) 
