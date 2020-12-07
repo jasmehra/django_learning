@@ -1,3 +1,45 @@
 username admin : tasahmad
 
 password admin : ahmad ad
+
+
+
+
+Deploying: 
+1) https://www.pythonanywhere.com/
+2) Sign up - Beginner Free
+3) Verify Email
+4) Push Code to github
+5) Go to bash on pythonanywhere dashboard
+6) git clone Code
+7) create virtual environment
+    - mkvirtualenv --python=/usr/bin/python3.8 portfolioenv
+            -here portfolioenv is name give to virtual environment
+
+    - to get into virtual environment -> workon portfolioenv
+    - to get outof virtualenv -> deactivate
+8) to see all vitual environments
+    - ls ~/.virtualenvs/
+9) install django and pillow inside vitual environment 
+    - pip install django pillow
+20) get complete path of project directory by typing pwd 
+21) get name of project -> is the name of folder that contains settings.py 
+22) go to pythonanywhere and select web from top right
+23) add new web app
+24) next and select manualconfiguration for webframework
+25) select python version and next
+26) reload option to pull latest content
+27) enter path of virtual environment in virtualenv -> just enter the name of virtualenv here - portfolioenv
+28) in source code enter full path of project copied in 20
+29) change working directory to same as 28
+30) change wsgi path - go to personal_portfolio folder you will find wsgi.py file (same location as that of system.py file)
+31) tasawwuramd.pythonanywhere.com shows the code that is in wsgi path file
+32) click on wsgi path it will edit the file 
+33) keep only django content from that file - uncomment
+34) code should start from import os - remove everything before that
+35) update the path to project path in wsgi file
+36) update django settings module to -> projectname from 21.settings -save
+37) reload web from pythonanywhere
+38) copy path i.e tasawwuramd.pythonanywhere.com - go to code directory and edit settings.py
+39) add ALLOWED_HOSTS = ['asawwuramd.pythonanywhere.com'] - reload web
+static files are missing
