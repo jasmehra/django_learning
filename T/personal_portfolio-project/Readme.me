@@ -63,4 +63,23 @@ For Static media files v55
 6) we can force https from pythonanywhere web 
 7) if want to use mysql go to databases option on top right 
 we can intialize it
-8) 
+
+
+GitIgnore
+1) go to gitignore.io and search django
+2) select only the top django option with the files tha are required to be ignored
+3) add gitignore file in project folder
+4) commit the gitignore file
+5) git rm -r --cached . -> to delete all changes so that git ignore can track if we add them back
+6) git add . -> to add back the required files
+7) git pull
+8) git commit -m
+9) git push origin main 
+
+Deploying changes
+1) create local_settings.py file in project directory
+2) add local_settings import in settings.py
+3) add debug and allowed host setting for local in local_settings.py file
+
+4) add all packages required to a file
+    - pip freeze > requirement.txt

@@ -124,3 +124,8 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("No local settings file. Looks like you are on production")
