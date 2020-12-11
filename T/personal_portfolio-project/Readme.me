@@ -83,3 +83,23 @@ Deploying changes
 
 4) add all packages required to a file
     - pip freeze > requirement.txt
+
+5) pull on pythonanywhere
+6) to install all packages 
+    - pip install -r requirement.txt
+
+Custom domain
+
+1) update allowed domain in settings.py
+2) update from domain name in web option in pythonanywhere
+3) update CNAME in domain provider so that domain points to our site
+4) before push 
+    - pip freeze > requirement.txt
+    - git add and Push
+5) git pull 
+    - pip install -r requirement.txt
+    - python3 manage.py collectstatic
+    - python manage.py migrate
+    - reload we app
+    - in domain provider add forward for something.com -> www.something.com as pythonanywhere only supports www.something.com
+    - do permanent redirect under synthetic path
