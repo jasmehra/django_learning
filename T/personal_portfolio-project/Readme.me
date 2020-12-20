@@ -1,3 +1,105 @@
 username admin : tasahmad
 
 password admin : ahmad ad
+
+
+
+
+Deploying: 
+1) https://www.pythonanywhere.com/
+2) Sign up - Beginner Free
+3) Verify Email
+4) Push Code to github
+5) Go to bash on pythonanywhere dashboard
+6) git clone Code
+7) create virtual environment
+    - mkvirtualenv --python=/usr/bin/python3.8 portfolioenv
+            -here portfolioenv is name give to virtual environment
+
+    - to get into virtual environment -> workon portfolioenv
+    - to get outof virtualenv -> deactivate
+8) to see all vitual environments
+    - ls ~/.virtualenvs/
+9) install django and pillow inside vitual environment 
+    - pip install django pillow
+20) get complete path of project directory by typing pwd 
+21) get name of project -> is the name of folder that contains settings.py 
+22) go to pythonanywhere and select web from top right
+23) add new web app
+24) next and select manualconfiguration for webframework
+25) select python version and next
+26) reload option to pull latest content
+27) enter path of virtual environment in virtualenv -> just enter the name of virtualenv here - portfolioenv
+28) in source code enter full path of project copied in 20
+29) change working directory to same as 28
+30) change wsgi path - go to personal_portfolio folder you will find wsgi.py file (same location as that of system.py file)
+31) tasawwuramd.pythonanywhere.com shows the code that is in wsgi path file
+32) click on wsgi path it will edit the file 
+33) keep only django content from that file - uncomment
+34) code should start from import os - remove everything before that
+35) update the path to project path in wsgi file
+36) update django settings module to -> projectname from 21.settings -save
+37) reload web from pythonanywhere
+38) copy path i.e tasawwuramd.pythonanywhere.com - go to code directory and edit settings.py
+39) add ALLOWED_HOSTS = ['asawwuramd.pythonanywhere.com'] - reload web
+static files are missing
+
+
+For Static media files v55
+1) In Settings.py change debug to False
+2) Add static root path as media root path is added 
+    - STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+3) in bash go to project directory and run 
+    - python3 manage.py collectstatic
+        -it moves all static file to one central location
+        inside project directory static folder will be created
+4) in pythonanywhere - web add static files url 
+    - /static/ - directory (directory of static) using pwd
+5) doing this will remove media files 
+    in static files url add media path 
+    - url as /media/ - directory as path of media using pwd
+
+
+6) we can force https from pythonanywhere web 
+7) if want to use mysql go to databases option on top right 
+we can intialize it
+
+
+GitIgnore
+1) go to gitignore.io and search django
+2) select only the top django option with the files tha are required to be ignored
+3) add gitignore file in project folder
+4) commit the gitignore file
+5) git rm -r --cached . -> to delete all changes so that git ignore can track if we add them back
+6) git add . -> to add back the required files
+7) git pull
+8) git commit -m
+9) git push origin main 
+
+Deploying changes
+1) create local_settings.py file in project directory
+2) add local_settings import in settings.py
+3) add debug and allowed host setting for local in local_settings.py file
+
+4) add all packages required to a file
+    - pip freeze > requirement.txt
+
+5) pull on pythonanywhere
+6) to install all packages 
+    - pip install -r requirement.txt
+
+Custom domain
+
+1) update allowed domain in settings.py
+2) update from domain name in web option in pythonanywhere
+3) update CNAME in domain provider so that domain points to our site
+4) before push 
+    - pip freeze > requirement.txt
+    - git add and Push
+5) git pull 
+    - pip install -r requirement.txt
+    - python3 manage.py collectstatic
+    - python manage.py migrate
+    - reload we app
+    - in domain provider add forward for something.com -> www.something.com as pythonanywhere only supports www.something.com
+    - do permanent redirect under synthetic path
