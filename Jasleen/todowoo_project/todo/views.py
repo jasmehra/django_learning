@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -51,6 +51,19 @@ def currenttodos(request):
     # todos = Todo.objects.all() for getting all todos
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=True)
     return render(request, 'todo/current-todos.html', {'todos': todos})
+
+def viewtodo(request, pk_id):
+    todo = get_object_or_404(Todo, pk=pk_id)
+    if request.method == "GET":
+        todoform = TodoForm(instance=todo)
+        return render(request, 'todo/viewtodo.html', {'todo': todo, 'form':todoform})
+    else:
+        try:
+            form = TodoForm(request.POST, instance=todo)
+            form.save()
+            return redirect('currenttodos')
+        except ValueError:
+            return render(request, 'todo/viewtodo.html', {'todo': todo, 'form':todoform, 'error':'Bad Info'})
 
 def userlogout(request):
     if request.method == 'POST':
