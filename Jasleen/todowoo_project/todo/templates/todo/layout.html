@@ -12,10 +12,14 @@
 <a href="{% url 'loginuser' %}">Login</a>
 <a href="{% url 'signupuser' %}">Sign up</a>
 
-
 {% endif %}
 
 <br><br>
+
+<a href="{% url 'createtodos' %}">Create Todos</a>
+<a href="{% url 'completedtodos' %}">Completed Todos</a>  
+<a href="{% url 'currenttodos' %}">Current Todos</a>
+<br>
 
 {% block content %}
 {% endblock %}
